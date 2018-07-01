@@ -1,0 +1,7 @@
+FROM php:7.2-fpm
+RUN apt-get update -y && apt-get install -y libmcrypt-dev openssl zip unzip git nano \
+    mysql-client libmagickwand-dev --no-install-recommends \
+    && pecl install imagick \
+    && docker-php-ext-enable imagick 
+RUN curl -sS https://getcomposer.org/installer | php -- --install-dir=/usr/local/bin --filename=composer
+RUN docker-php-ext-install pdo_mysql mbstring tokenizer ctype json
