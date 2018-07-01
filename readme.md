@@ -20,6 +20,7 @@ docker-compose exec app chmod -R 777 storage && docker-compose exec app chmod -R
 docker-compose exec app composer install
 docker-compose exec app php artisan key:generate 
 ```
+Finish! open `http://localhost:8080` and Start Development Go!!
 ## Remove Docker container.
 Open bash or CMD and run Command 
 ```
